@@ -1,0 +1,17 @@
+{
+  "name": "rush-licenses",
+  "version": "0.0.1",
+  "description": "Find licenses used in a rush monorepo",
+  "bin": "bin/rush-licenses.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["rush", "monorepo", "license"],
+  "author": "Jelle Herold <jelle@defekt.nl>",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "js-yaml": "^4.1.0",
+    "license-checker": "^25.0.1"
+  }
+}
