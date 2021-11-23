@@ -16,7 +16,7 @@ async function checkLicense(path) {
     })
 }
 
-module.exports = async function readLicenseInfo (rushRootPath, key) {
+async function readLicenseInfo (rushRootPath, key) {
 
     if(/^file:/.test(key)) {
         console.log(`Warning: skipping ${key}`)
@@ -54,4 +54,19 @@ module.exports = async function readLicenseInfo (rushRootPath, key) {
 
     console.log('Warning: unknown type key', key)
     return false
+}
+
+async function readAllLicenses(rushRoot, pkgs) {
+    let allLicenseInfo = []
+    for(let [pkg, pkgInfo] of Object.entries(pkgs)) {
+        let info = await readLicenseInfo(rushRoot, pkg)
+        if (info) {
+            allLicenseInfo.push(info)
+        }
+    }
+    return Object.fromEntries(allLicenseInfo)
+}
+
+module.exports = {
+    readAllLicenses
 }

@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["rush", "monorepo", "license"],
+  "keywords": [
+    "rush",
+    "monorepo",
+    "license"
+  ],
   "author": "Jelle Herold <jelle@defekt.nl>",
   "license": "GPL-2.0",
   "dependencies": {
